@@ -42,7 +42,7 @@ public class MaintenDetailService {
     }
     public Integer updateDescMaintenDetailInfo(String id,String problemDesc){
         try{
-            Integer integer = maintenDetailMapper.updateMaintenDetailInfo(id,problemDesc);
+            Integer integer = maintenDetailMapper.updateDescMaintenDetailInfo(id,problemDesc);
             return integer;
         }catch (Exception e){
             return 0;
