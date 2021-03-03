@@ -18,9 +18,9 @@ public interface MaintenDetailMapper {
     Long getTotal();
     @Select("select * from serviceinfo limit #{offset},#{size}")
     public List<MaintenDetail> getMaintenDetailInfoNO(Integer offset,Integer size);
-    @Update("update serviceinfo set status=#{status} where id=#{id}")
+    @Update("update serviceinfo set status=#{status} where repairNum=#{repairNum}")
     @Options(useGeneratedKeys = true,keyProperty = "id")
-    public Integer updateMaintenDetailInfo(String id,String status);
+    public Integer updateMaintenDetailInfo(String repairNum,String status);
     @Update("update serviceinfo set problemDesc=#{problemDesc} where id=#{id}")
     @Options(useGeneratedKeys = true,keyProperty = "id")
     public Integer updateDescMaintenDetailInfo(String id,String problemDesc);

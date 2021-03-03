@@ -44,8 +44,8 @@ public class MaintenDetailController {
         }
     }
     @PostMapping("/editStatusMaintenDetail")
-    public Msg updateMaintenDetailInfo(String id,String status){
-        Integer ids = maintenDetailService.updateMaintenDetailInfo(id,status);
+    public Msg updateMaintenDetailInfo(String repairNum,String status){
+        Integer ids = maintenDetailService.updateMaintenDetailInfo(repairNum,status);
         if(!ids.equals("")&&ids!=0){
             return Msg.success().add("info","修改成功").add("result",ids);
         }else{

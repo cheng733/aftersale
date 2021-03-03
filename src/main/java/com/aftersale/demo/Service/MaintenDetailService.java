@@ -32,9 +32,9 @@ public class MaintenDetailService {
         }
         return  null;
     }
-        public Integer updateMaintenDetailInfo(String id,String status){
+        public Integer updateMaintenDetailInfo(String repairNum,String status){
         try{
-            Integer integer = maintenDetailMapper.updateMaintenDetailInfo(id,status);
+            Integer integer = maintenDetailMapper.updateMaintenDetailInfo(repairNum,status);
             return integer;
         }catch (Exception e){
             return 0;
