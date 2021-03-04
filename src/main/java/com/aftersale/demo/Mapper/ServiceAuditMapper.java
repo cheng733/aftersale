@@ -18,14 +18,14 @@ public interface ServiceAuditMapper {
     Long getTotal();
     @Select("select * from serviceaudit limit #{offset},#{size}")
     public List<ServiceAudit> getServiceAuditInfoNO(Integer offset, Integer size);
-//    @Update("update serviceinfo set status=#{status} where id=#{id}")
-//    @Options(useGeneratedKeys = true,keyProperty = "id")
-//    public Integer updateMaintenDetailInfo(String id,String status);
+    @Update("update serviceaudit set status=#{status} where id=#{id}")
+    @Options(useGeneratedKeys = true,keyProperty = "id")
+    public Integer updateServiceAuditInfo(String id,String status);
 //    @Update("update serviceinfo set problemDesc=#{problemDesc} where id=#{id}")
 //    @Options(useGeneratedKeys = true,keyProperty = "id")
 //    public Integer updateDescMaintenDetailInfo(String id,String problemDesc);
-    @Insert("insert into serviceaudit(repairNum,verfiDepart,returnMethod,interviewee,visitor,userRequireAndSuggest,returnConclusion) values(#{repairNum},#{verfiDepart},#{returnMethod},#{interviewee},#{visitor},#{userRequireAndSuggest},#{returnConclusion})")
-    public Integer insertServiceAudit(String repairNum,String verfiDepart,String returnMethod,String interviewee,String visitor,String userRequireAndSuggest,String returnConclusion);
+    @Insert("insert into serviceaudit(repairNum,verfiDepart,returnMethod,interviewee,visitor,userRequireAndSuggest,returnConclusion,status) values(#{repairNum},#{verfiDepart},#{returnMethod},#{interviewee},#{visitor},#{userRequireAndSuggest},#{returnConclusion},#{status})")
+    public Integer insertServiceAudit(String repairNum,String verfiDepart,String returnMethod,String interviewee,String visitor,String userRequireAndSuggest,String returnConclusion,String status);
     @Delete("delete from serviceaudit where id=#{id}")
     public Integer deleteServiceAudit(String id);
 }

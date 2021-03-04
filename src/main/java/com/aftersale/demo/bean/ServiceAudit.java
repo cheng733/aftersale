@@ -17,4 +17,5 @@ public class ServiceAudit {
     String visitor;
     String userRequireAndSuggest;
     String returnConclusion;
+    String status;
 }

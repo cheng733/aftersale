@@ -33,14 +33,14 @@ public class ServiceAuditService {
         }
         return  null;
     }
-    //    public Integer updateServiceFeeInfo(String id,String status){
-//        try{
-//            Integer integer = serviceFeeService.updateMaintenDetailInfo(id,status);
-//            return integer;
-//        }catch (Exception e){
-//            return 0;
-//        }
-//    }
+        public Integer updateServiceAuditInfo(String id,String status){
+        try{
+            Integer integer = serviceAuditMapper.updateServiceAuditInfo(id,status);
+            return integer;
+        }catch (Exception e){
+            return 0;
+        }
+    }
 //    public Integer updateDescMaintenDetailInfo(String id,String problemDesc){
 //        try{
 //            Integer integer = maintenDetailMapper.updateDescMaintenDetailInfo(id,problemDesc);
@@ -49,9 +49,9 @@ public class ServiceAuditService {
 //            return 0;
 //        }
 //    }
-    public Integer insertServiceAuditInfo(String repairNum,String verfiDepart,String returnMethod,String interviewee,String visitor,String userRequireAndSuggest,String returnConclusion){
+    public Integer insertServiceAuditInfo(String repairNum,String verfiDepart,String returnMethod,String interviewee,String visitor,String userRequireAndSuggest,String returnConclusion,String status){
         try{
-            Integer integer = serviceAuditMapper.insertServiceAudit(repairNum,verfiDepart,returnMethod,interviewee,visitor,userRequireAndSuggest,returnConclusion);
+            Integer integer = serviceAuditMapper.insertServiceAudit(repairNum,verfiDepart,returnMethod,interviewee,visitor,userRequireAndSuggest,returnConclusion,status);
             return integer;
         }catch (Exception e){
             return 0;
