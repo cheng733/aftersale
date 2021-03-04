@@ -36,23 +36,23 @@ public class ServiceAuditController {
 
     }
     @PostMapping("/insertServiceAudit")
-    public Msg insertServiceAuditInfo(String repairNum,String verfiDepart,String returnMethod,String interviewee,String visitor,String userRequireAndSuggest,String returnConclusion){
-        Integer id = serviceAuditService.insertServiceAuditInfo(repairNum,verfiDepart,returnMethod,interviewee,visitor,userRequireAndSuggest,returnConclusion);
+    public Msg insertServiceAuditInfo(String repairNum,String verfiDepart,String returnMethod,String interviewee,String visitor,String userRequireAndSuggest,String returnConclusion,String status){
+        Integer id = serviceAuditService.insertServiceAuditInfo(repairNum,verfiDepart,returnMethod,interviewee,visitor,userRequireAndSuggest,returnConclusion,status);
         if(id==1){
             return Msg.success().add("info","插入成功").add("result",id);
         }else{
             return Msg.fail().add("info","插入失败").add("result",id);
         }
     }
-//    @PostMapping("/editStatusMaintenDetail")
-//    public Msg updateMaintenDetailInfo(String id,String status){
-//        Integer ids = maintenDetailService.updateMaintenDetailInfo(id,status);
-//        if(!ids.equals("")&&ids!=0){
-//            return Msg.success().add("info","修改成功").add("result",ids);
-//        }else{
-//            return Msg.fail().add("info","修改失败");
-//        }
-//    }
+    @PostMapping("/editStatusServiceAudit")
+    public Msg updateServiceAuditInfo(String id,String status){
+        Integer ids = serviceAuditService.updateServiceAuditInfo(id,status);
+        if(!ids.equals("")&&ids!=0){
+            return Msg.success().add("info","修改成功").add("result",ids);
+        }else{
+            return Msg.fail().add("info","修改失败");
+        }
+    }
 //    @PostMapping("/editProblemDescMaintenDetail")
 //    public Msg updateDescMaintenDetailInfo(String id,String problemDesc){
 //        Integer ids = maintenDetailService.updateDescMaintenDetailInfo(id,problemDesc);
